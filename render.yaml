@@ -1,12 +1,12 @@
 previewsEnabled: true
 databases:
-  - name: rails-canary
+  - name: railscanary
     databaseName: railscanary
     user: railscanary
 
 services:
   - type: web
-    name: rails-canary
+    name: railscanary
     env: ruby
     buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec puma -C config/puma.rb"
