@@ -1,5 +1,5 @@
 {
-	"name": "Keeper",
+	"name": "rails-canary",
 	"dockerComposeFile": "docker-compose.yml",
 	"service": "app",
 	"workspaceFolder": "/workspace",
