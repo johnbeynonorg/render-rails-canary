@@ -26,7 +26,7 @@ services:
           property: host
       - key: REDIS_PORT
         fromService:
-          name: redis
+          name: rediseu
           type: pserv
           property: port
       - key: SECRET_KEY_BASE
@@ -36,7 +36,7 @@ services:
       - key: PERMITTED_SENDERS
         value: someone@email.com
   - type: pserv
-    name: redis
+    name: rediseu
     region: frankfurt
     env: docker
     repo: https://github.com/render-examples/redis.git 
