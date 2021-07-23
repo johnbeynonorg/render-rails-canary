@@ -21,7 +21,7 @@ services:
           property: connectionString
       - key: REDIS_HOST
         fromService:
-          name: redis
+          name: rediseu
           type: pserv
           property: host
       - key: REDIS_PORT
