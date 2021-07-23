@@ -1,12 +1,14 @@
 previewsEnabled: true
 databases:
-  - name: railscanary
-    databaseName: railscanary
+  - name: railscanary-eu
+    region: frankfurt
+    databaseName: railscanary-eu
     user: railscanary
 
 services:
   - type: web
-    name: railscanary
+    name: railscanary-eu
+    region: frankfurt
     env: ruby
     buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec puma -C config/puma.rb"
@@ -15,7 +17,7 @@ services:
         value: production
       - key: DATABASE_URL
         fromDatabase:
-          name: railscanary
+          name: railscanary-eu
           property: connectionString
       - key: REDIS_HOST
         fromService:
@@ -35,6 +37,7 @@ services:
         value: someone@email.com
   - type: pserv
     name: redis
+    region: frankfurt
     env: docker
     repo: https://github.com/render-examples/redis.git 
     disk:
