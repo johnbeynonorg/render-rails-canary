@@ -1,13 +1,13 @@
 previewsEnabled: true
 databases:
-  - name: railscanary-eu
+  - name: railscanaryeu
     region: frankfurt
-    databaseName: railscanary-eu
+    databaseName: railscanaryeu
     user: railscanary
 
 services:
   - type: web
-    name: railscanary-eu
+    name: railscanaryeu
     region: frankfurt
     env: ruby
     buildCommand: "./bin/render-build.sh"
@@ -17,7 +17,7 @@ services:
         value: production
       - key: DATABASE_URL
         fromDatabase:
-          name: railscanary-eu
+          name: railscanaryeu
           property: connectionString
       - key: REDIS_HOST
         fromService:
