@@ -11,7 +11,7 @@ services:
     region: frankfurt
     env: ruby
     buildCommand: "./bin/render-build.sh"
-    startCommand: "bundle exec puma -C config/puma.rb"
+    startCommand: "./bin/startRender.sh"
     envVars:
       - key: RAILS_ENV
         value: production
@@ -39,8 +39,8 @@ services:
     name: rediseu
     region: frankfurt
     env: docker
-    repo: https://github.com/render-examples/redis.git 
+    repo: https://github.com/render-examples/redis.git
     disk:
-        name: redis-data
-        mountPath: /var/lib/redis
-        sizeGB: 10
+      name: redis-data
+      mountPath: /var/lib/redis
+      sizeGB: 10
