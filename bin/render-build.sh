@@ -7,5 +7,4 @@ bundle exec rake assets:precompile
 bundle exec rake assets:clean
 bundle exec rake db:migrate
 
-cp ~/project/src/bin/renderProfile.sh ~/.profile
 

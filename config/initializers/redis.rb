@@ -1,11 +1,11 @@
-REDIS_URL = "redis://#{ENV['REDIS_HOST']}:#{ENV['REDIS_PORT']}"
+ENV['REDIS_URL'] = "redis://#{ENV['REDIS_HOSTPORT']}"
 
-$redis = Redis.new(url: REDIS_URL)
+$redis = Redis.new(url: ENV['REDIS_URL'])
 
 Sidekiq.configure_server do |config|
-	config.redis = { url: REDIS_URL }
-      end
-      
-      Sidekiq.configure_client do |config|
-	config.redis = { url: REDIS_URL }
-      end
+      config.redis = { url: ENV['REDIS_URL'] }
+end
+
+Sidekiq.configure_client do |config|
+      config.redis = { url: ENV['REDIS_URL'] }
+end

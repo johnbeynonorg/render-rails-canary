@@ -29,6 +29,11 @@ services:
           name: rediseu
           type: pserv
           property: port
+      - key: REDIS_HOSTPORT
+        fromService:
+          name: rediseu
+          type: pserv
+          property: hostport
       - key: SECRET_KEY_BASE
         generateValue: true
       - key: PERMITTED_USERS
