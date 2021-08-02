@@ -9,7 +9,7 @@ services:
   - type: web
     name: railscanaryeu
     region: frankfurt
-    plan: Standard Plus
+    plan: Starter Plus
     env: ruby
     buildCommand: "./bin/render-build.sh"
     startCommand: "./bin/startRender.sh"
