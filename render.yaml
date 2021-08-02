@@ -9,6 +9,7 @@ services:
   - type: web
     name: railscanaryeu
     region: frankfurt
+    plan: Standard Plus
     env: ruby
     buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec puma -C config/puma.rb"
@@ -39,8 +40,8 @@ services:
     name: redis
     region: frankfurt
     env: docker
-    repo: https://github.com/render-examples/redis.git 
+    repo: https://github.com/render-examples/redis.git
     disk:
-        name: redis-data
-        mountPath: /var/lib/redis
-        sizeGB: 10
+      name: redis-data
+      mountPath: /var/lib/redis
+      sizeGB: 10
