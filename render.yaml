@@ -12,7 +12,7 @@ services:
     plan: Standard Plus
     env: ruby
     buildCommand: "./bin/render-build.sh"
-    startCommand: "bundle exec puma -C config/puma.rb"
+    startCommand: "./bin/startRender.sh"
     envVars:
       - key: RAILS_ENV
         value: production
@@ -22,14 +22,19 @@ services:
           property: connectionString
       - key: REDIS_HOST
         fromService:
-          name: redis
+          name: rediseu
           type: pserv
           property: host
       - key: REDIS_PORT
         fromService:
-          name: redis
+          name: rediseu
           type: pserv
           property: port
+      - key: REDIS_HOSTPORT
+        fromService:
+          name: rediseu
+          type: pserv
+          property: hostport
       - key: SECRET_KEY_BASE
         generateValue: true
       - key: PERMITTED_USERS
@@ -37,7 +42,7 @@ services:
       - key: PERMITTED_SENDERS
         value: someone@email.com
   - type: pserv
-    name: redis
+    name: rediseu
     region: frankfurt
     env: docker
     repo: https://github.com/render-examples/redis.git
