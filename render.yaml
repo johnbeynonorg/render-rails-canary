@@ -51,7 +51,7 @@ services:
       name: redis-data
       mountPath: /var/lib/redis
       sizeGB: 10
-  - type: work
+  - type: worker
     name: railscanaryeu-worker
     env: ruby
     buildCommand: "./bin/render-build.sh"
