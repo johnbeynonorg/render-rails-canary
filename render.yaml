@@ -56,7 +56,7 @@ services:
     env: ruby
     buildCommand: "./bin/render-build.sh"
     envVars:
-     key: WEB_HOST
+      - key: WEB_HOST
         fromService:
           name: railscanaryeu
           type: web
