@@ -55,6 +55,7 @@ services:
     name: railscanaryeu-worker
     env: ruby
     buildCommand: "./bin/render-build.sh"
+    startCommand: "./bin/startRender.sh"
     envVars:
       - key: WEB_HOST
         fromService:
