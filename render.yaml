@@ -13,6 +13,7 @@ services:
     buildCommand: "./bin/render-build.sh"
     startCommand: "./bin/startRender.sh"
     envVars:
+      - fromGroup: jb-test-group
       - key: RAILS_ENV
         value: production
       - key: DATABASE_URL
