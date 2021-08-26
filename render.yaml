@@ -61,4 +61,4 @@ services:
         fromService:
           name: railscanaryeu
           type: web
-          property: hostport
+          envVarKey: RENDER_EXTERNAL_URL
