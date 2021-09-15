@@ -68,6 +68,6 @@ services:
 
 envVarGroups:
   - name: envvargroupstest
-  envVars:
-    - key: GROUP_TEST
-      sync: false
+    envVars:
+      - key: GROUP_TEST
+        sync: false
