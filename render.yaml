@@ -16,8 +16,6 @@ services:
     envVars:
       - fromGroup: jb-test-group
       - fromGroup: envvargroupstest
-      - key: JB_TEST
-        sync: false
       - key: RAILS_ENV
         value: production
       - key: DATABASE_URL
