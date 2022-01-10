@@ -11,10 +11,7 @@ services:
     buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec puma -C config/puma.rb"
     envVars:
-      - key: TEST_KEY
-        fromService: railscanary
-        type: web
-        envVarKey: DATABASE_URL
+      - fromGroup: rails-canary-prod-db
       - key: RAILS_ENV
         value: production
       - key: DATABASE_URL
