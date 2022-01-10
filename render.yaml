@@ -11,6 +11,10 @@ services:
     buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec puma -C config/puma.rb"
     envVars:
+      - key: TEST_KEY
+        fromService: railscanary
+        type: web
+        envVarKey: DATABASE_URL
       - key: RAILS_ENV
         value: production
       - key: DATABASE_URL
@@ -36,8 +40,8 @@ services:
   - type: pserv
     name: redis
     env: docker
-    repo: https://github.com/render-examples/redis.git 
+    repo: https://github.com/render-examples/redis.git
     disk:
-        name: redis-data
-        mountPath: /var/lib/redis
-        sizeGB: 10
+      name: redis-data
+      mountPath: /var/lib/redis
+      sizeGB: 10
